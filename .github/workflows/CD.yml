@@ -1,50 +1,14 @@
-name: ci-cd
+name: CD
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  ci:
-    # Set up operating system
+  deploy:
     runs-on: ubuntu-latest
 
-    # Define job steps
-    steps:
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11.6"
-
-      - name: Check-out repository
-        uses: actions/checkout@v3
-
-      - name: Install poetry
-        uses: snok/install-poetry@v1
-
-      - name: Install package
-        run: poetry install
-
-      - name: Test with pytest
-        run: poetry run pytest tests/ --cov=vizchain --cov-report=xml
-
-      - name: Use Codecov to track coverage
-        uses: codecov/codecov-action@v3
-        with:
-          files: ./coverage.xml   # coverage report
-
-      - name: Build documentation
-        run: poetry run make html --directory docs/
-
-  cd:
-    # Only run this job if the "ci" job passes
-    needs: ci
-
-    # Only run this job if new work is pushed to "main"
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-
-    # Set up operating system
-    runs-on: ubuntu-latest
-
-    # Define job steps
     steps:
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -60,11 +24,10 @@ jobs:
         uses: snok/install-poetry@v1
 
       - name: Install package
-        run: poetry install
+        run: poetry install --no-root
 
       - name: Use Python Semantic Release to prepare release
         env:
-          # This token is created automatically by GH Actions
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
             git config user.name github-actions

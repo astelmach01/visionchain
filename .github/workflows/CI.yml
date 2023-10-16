@@ -1,0 +1,33 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11.6"
+
+      - name: Check-out repository
+        uses: actions/checkout@v3
+
+      - name: Install poetry
+        uses: snok/install-poetry@v1
+
+      - name: Install package with dev dependencies
+        run: poetry install --no-root --extras "dev"
+
+      - name: Test with pytest
+        run: poetry run pytest tests/ --cov=vizchain --cov-report=xml
+
+      - name: Use Codecov to track coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage.xml
+
+      - name: Build documentation
+        run: poetry run make html --directory docs/
