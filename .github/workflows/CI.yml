@@ -19,7 +19,7 @@ jobs:
         uses: snok/install-poetry@v1
 
       - name: Install package with dev dependencies
-        run: poetry install --no-root --extras "dev"
+        run: poetry install --no-root
 
       - name: Test with pytest
         run: poetry run pytest tests/ --cov=vizchain --cov-report=xml
