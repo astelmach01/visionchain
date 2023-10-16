@@ -7,7 +7,7 @@ build:
 
 # Configuration
 python:
-  version: 3.11.5
+  version: 3.11.6
   install:
     - requirements: docs/requirements.txt
     - method: pip
