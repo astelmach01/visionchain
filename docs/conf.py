@@ -6,9 +6,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"vizchain"
-copyright = u"2023, Andrew Stelmach"
-author = u"Andrew Stelmach"
+project = "vizchain"
+copyright = "2023, Andrew Stelmach"
+author = "Andrew Stelmach"
 
 # -- General configuration ---------------------------------------------------
 

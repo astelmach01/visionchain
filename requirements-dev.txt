@@ -1,0 +1,6 @@
+sphinx
+pre-commit
+isort
+black
+mypy
+autoflake

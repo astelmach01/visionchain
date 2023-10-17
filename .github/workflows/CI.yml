@@ -1,33 +1,36 @@
-name: CI
+name: Cosmo Backend
 
-on: [push, pull_request]
+on: pull_request
 
 jobs:
-  build-test:
+  CI:
+
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11.6"
+          python-version-file: '.python-version'
+          cache: 'pip'
 
-      - name: Check-out repository
-        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
+          pip install -r requirements.txt
+          pip install -e .
 
-      - name: Install poetry
-        uses: snok/install-poetry@v1
+      - name: Lint with flake8
+        run: |
+          flake8 .
 
-      - name: Install package with dev dependencies
-        run: poetry install --no-root && pip install -e .
-
+      - name: Validate types with MyPy
+        run: |
+          mypy .
       - name: Test with pytest
-        run: poetry run pytest tests/ --cov=vizchain --cov-report=xml
-
-      - name: Use Codecov to track coverage
-        uses: codecov/codecov-action@v3
-        with:
-          files: ./coverage.xml
+        run: |
+          pytest
 
       - name: Build documentation
-        run: poetry run make html --directory docs/
+        run: make html --directory docs/
