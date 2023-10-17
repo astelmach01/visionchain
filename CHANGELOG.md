@@ -2,6 +2,21 @@
 
 
 
+## v0.1.1 (2023-10-17)
+
+### Fix
+
+* fix: name ([`28f7348`](https://github.com/astelmach01/vizchain/commit/28f7348e4d52be4f750582f24b04762e1210bc5f))
+
+* fix: name ([`205eef0`](https://github.com/astelmach01/vizchain/commit/205eef014d52c862fce12c127c8349fc9c4772bd))
+
+### Unknown
+
+* Merge pull request #1 from astelmach01/quick_fix
+
+fix: name ([`6afa162`](https://github.com/astelmach01/vizchain/commit/6afa1629c9c800882fc12eba70c079ffe2dee42b))
+
+
 ## v0.1.0 (2023-10-17)
 
 ### Feature
