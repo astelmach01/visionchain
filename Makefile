@@ -2,10 +2,10 @@
 all: check
 
 # The input requirements.in file
-REQUIREMENTS_IN = requirements-dev.in
+REQUIREMENTS_IN = requirements.in
 
 # The generated requirements.txt file
-REQUIREMENTS_TXT = requirements-dev.txt
+REQUIREMENTS_TXT = requirements.txt
 
 .PHONY: compile install push sort format type check fix-imports publish clean
 
