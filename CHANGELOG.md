@@ -2,6 +2,19 @@
 
 
 
+## v0.1.1 (2023-10-17)
+
+### Fix
+
+* fix: fix setup ([`c756800`](https://github.com/astelmach01/vizchain/commit/c75680037f047c186b7d602c55a6d13abaeb03a8))
+
+### Unknown
+
+* Merge pull request #3 from astelmach01/quick_fix
+
+fix: fix setup ([`7364e61`](https://github.com/astelmach01/vizchain/commit/7364e61c9e8efe5eb67afeca8117f2c2c4500a11))
+
+
 ## v0.1.0 (2023-10-17)
 
 ### Feature
