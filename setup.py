@@ -9,7 +9,7 @@ with open("requirements.txt") as f:
 __version__ = "0.1.0"
 
 setup(
-    name="tinylang",
+    name="vizchain",
     version=__version__,
     install_requires=requirements,
     packages=find_packages(),
