@@ -2,6 +2,7 @@ sphinx
 pre-commit
 isort
 black
+flake8
 mypy
 autoflake
 pytest
