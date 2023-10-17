@@ -7,5 +7,3 @@ mypy
 autoflake
 pytest
 types-setuptools
-myst-nb
-sphinx-autoapi
