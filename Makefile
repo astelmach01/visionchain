@@ -27,7 +27,7 @@ check: sort format type fix-imports
 compile: $(REQUIREMENTS_TXT)
 
 install: compile
-	pip install -r $(REQUIREMENTS_TXT)
+	pip install -r $(REQUIREMENTS_TXT) && pip install -r requirements-dev.txt
 
 $(REQUIREMENTS_TXT): $(REQUIREMENTS_IN)
 	pip-compile $(REQUIREMENTS_IN) -o $(REQUIREMENTS_TXT)

@@ -1,7 +1,9 @@
 sphinx
 pre-commit
 isort
-black
+black[jupyter]
+flake8
 mypy
 autoflake
 pytest
+types-setuptools
