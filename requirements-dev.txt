@@ -6,3 +6,4 @@ flake8
 mypy
 autoflake
 pytest
+types-setuptools
