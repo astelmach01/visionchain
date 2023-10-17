@@ -1,4 +1,4 @@
-name: Cosmo Backend
+name: CI
 
 on: pull_request
 
