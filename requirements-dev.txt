@@ -7,3 +7,5 @@ mypy
 autoflake
 pytest
 types-setuptools
+twine
+bump2version

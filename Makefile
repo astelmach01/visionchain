@@ -44,3 +44,10 @@ push: check
 
 clean:
 	rm -rf build dist .egg requests.egg-info *.egg-info
+
+publish: clean
+	python setup.py sdist bdist_wheel
+	python -m twine upload dist/*
+
+bump-version:
+	bump2version patch  # use 'minor' or 'major' for bigger changes
