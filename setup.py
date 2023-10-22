@@ -7,11 +7,11 @@ with open("README.md", "r", encoding="utf-8") as f:
 with open("requirements.txt", "r", encoding="utf-8") as f:
     requirements = f.read().splitlines()
 
-__version__ = "0.1.1"
+version = "0.0.6"
 
 setup(
     name="vizchain",
-    version=__version__,
+    version=version,
     install_requires=requirements,
     packages=find_packages(),
     description="A tiny language interpreter",
