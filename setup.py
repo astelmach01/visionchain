@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 with open("requirements.txt", "r", encoding="utf-8") as f:
     requirements = f.read().splitlines()
 
-version = "0.0.1"
+version = "0.0.5"
 
 setup(
     name="vizchain",
